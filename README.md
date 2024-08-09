@@ -50,46 +50,4 @@ printf("%d\t%f\n", n_values[i], time_taken[i]);
 }
 return 0;
 }
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-void selectionSort(int arr[], int n)
-{
-int i, j, min_idx, temp;
-for (i = 0; i < n-1; i++)
-{
-min_idx = i;
-for (j = i+1; j < n; j++)
-{
-if (arr[j] < arr[min_idx])
-{
-min_idx = j;
-}
-}
-temp = arr[min_idx];
-arr[min_idx] = arr[i];
-arr[i] = temp;
-}
-}
-int main()
-{
-int n, i;
-printf("Enter the number of elements: ");
-scanf("%d", &n);
-int arr[n];
-srand(time(NULL));
-printf("Generated array: ");
-for (i = 0; i < n; i++)
-{
-arr[i] = rand() % 100; 
-printf("%d ", arr[i]);
-}
-selectionSort(arr, n);
-printf("\nSorted array: ");
-for (i = 0; i < n; i++)
-{
-printf("%d ", arr[i]);
-}
-printf("\n");
-return 0;
-}
+
